@@ -1,0 +1,30 @@
+{
+  "name": "graphql",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run prod",
+    "server": "babel-node ./src/bin/server",
+    "server:prod": "node ./dist/bin/server",
+    "clean": "rimraf dist",
+    "build": "babel ./src --out-dir ./dist",
+    "dev": "NODE_ENV=development yarn server",
+    "prod": "NODE_ENV=production yarn clean && yarn build && yarn server:prod",
+    "watch": "nodemon"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "logger": "^0.0.1",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3"
+  }
+}
